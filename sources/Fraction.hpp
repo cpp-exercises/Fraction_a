@@ -6,7 +6,7 @@ namespace ariel{
     public:
         Fraction(/* args */);
         ~Fraction();
-        
+        //sddd
         Fraction operator + (Fraction f);
         Fraction operator - (Fraction f);
         Fraction operator * (Fraction f);

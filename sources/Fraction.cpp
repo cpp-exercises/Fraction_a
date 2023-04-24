@@ -5,10 +5,10 @@
 #include <stdexcept>
 using namespace std;
 namespace ariel{
-    int Fraction::gcd(int a, int b){
-        if (b == 0)
-            return a;
-        return gcd(b, a % b);
+    int Fraction::gcd(int first, int second){
+        if (second == 0)
+            return first;
+        return gcd(second, first % second);
     }
     Fraction Fraction::operator+(const Fraction& other){
         int newNumerator = this->numerator * other.denominator + other.numerator * this->denominator;

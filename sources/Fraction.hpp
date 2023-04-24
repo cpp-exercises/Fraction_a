@@ -12,13 +12,11 @@ namespace ariel{
         int numerator;
         int denominator;
     public:
-        int gcd(int a, int b);
-        Fraction(int nume, int deno){
-            if(deno == 0){
+        int gcd(int first, int second);
+        Fraction(int _numerator, int _denominator): numerator(_numerator), denominator(_denominator){
+            if(_denominator == 0){
                 throw std::invalid_argument("Math: can't devide by 0");
             }
-            this->numerator = nume;
-            this->denominator = deno;
         }
         Fraction operator+(const Fraction& other);
         Fraction operator+(double num);
@@ -48,10 +46,11 @@ namespace ariel{
         friend std::ostream& operator<<(std::ostream& ost, const Fraction& frc);
         friend std::istream& operator>>(std::istream& ist, Fraction& frc);
 
-        int getNumerator() {
+        int getNumerator() const
+        {
             return this->numerator;
         }
-        int getDenominator() {
+        int getDenominator() const{
             return this->denominator;
         }
     };

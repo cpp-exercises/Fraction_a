@@ -25,7 +25,7 @@ namespace ariel{
         Fraction operator-(const Fraction& other);
         Fraction operator-(double num);
         Fraction operator*(const Fraction& other);
-        Fraction operator*(double num);
+        friend Fraction operator*(double num, const Fraction& other);
         Fraction operator/(const Fraction& other);
         Fraction operator/(double num);
 
@@ -45,8 +45,8 @@ namespace ariel{
         Fraction &operator++(); // prefix
         Fraction &operator--(); // prefix
 
-        friend ostream& operator<<(ostream& ost, const Fraction& frc);
-        friend istream& operator>>(istream& ist, Fraction& frc);
+        friend std::ostream& operator<<(std::ostream& ost, const Fraction& frc);
+        friend std::istream& operator>>(std::istream& ist, Fraction& frc);
 
         int getNumerator() {
             return this->numerator;
@@ -55,4 +55,9 @@ namespace ariel{
             return this->denominator;
         }
     };
+
+
+
+
+
 }

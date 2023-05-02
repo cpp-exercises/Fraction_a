@@ -13,7 +13,7 @@ namespace ariel{
         int denominator;
     public:
         int gcd(int first, int second);
-        Fraction(int _numerator, int _denominator): numerator(_numerator), denominator(_denominator){
+        Fraction(int _numerator, const int _denominator): numerator(_numerator), denominator(_denominator){
             if(_denominator == 0){
                 throw std::invalid_argument("Math: can't devide by 0");
             }
